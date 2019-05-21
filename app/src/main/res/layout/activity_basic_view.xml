@@ -14,18 +14,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <Button
-                android:id="@+id/button_components"
+                android:id="@+id/listViewButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="down"
-                android:text="四大组件"
+                android:text="listview"
                 />
-            <Button
-                android:id="@+id/basicView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="down"
-                android:text="基本控件"/>
         </LinearLayout>
     </ScrollView>
 
