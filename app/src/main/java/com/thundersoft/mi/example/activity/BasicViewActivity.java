@@ -19,6 +19,11 @@ public class BasicViewActivity extends Activity {
             case R.id.listViewButton:
                 startActivity(new Intent(this,MyListViewActivity.class));
                 break;
+            case R.id.multiListView :
+                startActivity(new Intent(this,MultiListViewActivity.class));
+                break;
+            default :
+                break;
         }
     }
 }
