@@ -26,6 +26,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="multiListView"/>
+            <Button
+                android:id="@+id/menu"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Menu"/>
         </LinearLayout>
     </ScrollView>
 

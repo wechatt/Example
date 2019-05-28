@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.MenuActivity"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,10 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BasicViewActivity"></activity>
-        <activity android:name=".activity.MyListViewActivity"></activity>
-        <activity android:name=".activity.ComponentsActivity"></activity>
-        <activity android:name=".activity.MultiListViewActivity"></activity>
+        <activity android:name=".activity.BasicViewActivity" />
+        <activity android:name=".activity.MyListViewActivity" />
+        <activity android:name=".activity.ComponentsActivity" />
+        <activity android:name=".activity.MultiListViewActivity" />
     </application>
 
 </manifest>

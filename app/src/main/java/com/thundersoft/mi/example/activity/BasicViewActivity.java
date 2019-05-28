@@ -22,6 +22,8 @@ public class BasicViewActivity extends Activity {
             case R.id.multiListView :
                 startActivity(new Intent(this,MultiListViewActivity.class));
                 break;
+            case R.id.menu:
+                startActivity(new Intent(this, MenuActivity.class));
             default :
                 break;
         }
