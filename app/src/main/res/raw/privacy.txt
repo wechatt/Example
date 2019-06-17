@@ -1,0 +1,120 @@
+﻿We respect your privacy when handling your personal data. This Privacy Policy describes the entity responsible for the collection, processing and use of personal data we collect from you in connection with the use of our Smart TV services ("Services"), what types of personal data we collect about you, what we do with it, and your rights in relation to our use of the personal data.
+        1.Data controller
+        The collection, processing and use of the personal data collected from you when using the Services is conducted by Panasonic India Pvt. Ltd.12th Floor Ambience Tower ,Ambience Island, NH-8, Gurgaon , Haryana - 122002 , India. Please note, however, that we are not responsible for all data processing activities set out below. We have nevertheless included a description of the respective activities in our Privacy Policy because this processing is connected with your use of the Smart TV.
+        2.Data processing consent
+        Some of the collection, processing and/or use of your personal data require your consent.If you have consented to the use of your personal data for the purpose of improving the Services, your consent had the following wording:
+        "I consent to the collection, processing and use of my device start time, DTV channel list,favorite channels list, visit time, and viewed channels for the purposes of analyzing user habits to improve the Services and/or to analyze how many online users Company has per day/month/year and to the sharing of this information with TV stations."
+        If you have consented to the use of your personal data for advertisements that are tailored to your interests, your consent had the following wording:
+        "I consent to the collection, processing and use of my client type and country for the purpose of receiving appropriate advertisements."
+        Consent is voluntary and you will still be able to use the Services if you do not consent.However, you may see advertisements and other content that is not tailored to your preferences. Irrespective of your consent Company reserves the right to collect, process and/or use the above data to the extent permitted by applicable law.
+        You may withdraw your consent to any of the above with effect for the future at any time. You may object to a use of your personal data for marketing, market or opinion research and to the tailoring of the Services to your needs. In order to withdraw your consent and/or to object,please change the privacy settings of your Smart TV accordingly.
+        3.Personal data collected
+        Irrespective of your consent, Company collects, processes, stores and uses the following data categories:
+        Device-ID: Your Smart TV stores a fixed unique number that enables us to identify and authenticate the Smart TV when you use the Services. This number is called the Device-ID.The Device-ID will be provided to our service partner to provide you the Services. We also provide the Device-ID to selected content partners for authentication purposes. These content partners use the Device-ID to authenticate your Smart TV for access to services provided by a content partner.
+        IP address and MAC address: Your Smart TV will be assigned an IP address when accessing the Internet. This IP address will be transmitted to us and processed by us each time the Smart TV requests information or data from the Services. If your Smart TV is behind a router (e.g. in a local home network or local WLAN), we may collect and process the IP address of such router.The MAC address is a unique number assigned to each network interface of your Smart TV.The MAC address will also be collected and processed by us when the Smart TV requests information or data from the Services.
+        Service request data: Whenever you connect your Smart TV to the Internet and turn on the Smart TV, it will automatically connect to the Services, which are managed by our service partner. Your Smart TV will then be authenticated as being certified for access to the Services. For authentication purposes, the Services store one or more unique numeric identifiers related to your Smart TV. When connecting to the Service, the Smart TV will transmit the IP address it has been assigned and will transmit device specific information (Smart TV model, software version) to look whether software updates are available.
+        Service settings: As part of the regular functionality of the Services you can manually arrange
+        the order in which apps are displayed by the Services. Our service partner will store your
+        arrangement and other preferences you may set during using the Services. This information will
+        be linked to the Device-ID.
+        Device specific information: The Smart TV stores several information about itself and its
+        configuration. This information includes the Smart TV type, the version of the operation system
+        of the Smart TV, its panel resolution, the project ID (i.e. information regarding configuration
+        files), the user agent, browser name, browser version, and the language and country that have
+        been configured in the Smart TV. This information will be used by us and will be provided to our
+        service partner and content partners.
+        Advertising: The Services may serve advertisements. These advertisements are served by us,
+        or by third parties using advertising inventory assigned by us. All advertisements are served by
+        means of, or via, our advertising server, which fulfills a coordinating role for the serving of
+        advertisements. Our advertising server or the third party advertising server may set a cookie on
+        the Smart TV. Please refer to our Cookie Policy for more information about these cookies.
+        Service and Content Partner traffic: When you use the Services your Smart TV will request
+        data from the Services via the Internet. As part of these requests your IP address as described
+        above and the language and country that has been configured in your Smart TV will be
+        transmitted to our service partner. Our service partner will process the respective data in
+        accordance with its privacy policy.
+        Second screen usage: If you use our second screen application, the controls you activate on the application
+        and the country and language settings, DTV channel list, favorite channels lists, schedule lists,
+        Device-ID, current channel, protocol version and IP address of your Smart TV will be collected and
+        processed by us on our servers. Our servers will then control your Smart TV as directed by you in
+        the second screen app.
+         - "Red Button": TV stations ("Stations") may send additional information with
+        their TV signal. If the Smart TV receives specific instructions in such additional
+        information and if it is connected to the Internet, the Smart TV will download a picture or
+        small page from the Station\'s website and display it together with the information to
+        press the "Red Button" on your remote control if you want to use additional services
+        provided by the Station. This happens each time you zap. Downloading the picture from
+        the Station\'s website the Smart TV will transmit some personal data, i.e. the DTV
+        channel list, current channel, event information table, TV time, IP address of your Smart
+        TV and cookies stored on the Smart TV (if any). The Station is responsible for the
+        collection, processing and/or use of this data. Moreover, if you use additional services
+        offered by a Station through the Red Button, the Station may collect other personal data
+        about you (e.g. which on-demand videos you watch, the news you read, etc.).
+        4.Purposes for which we process and/or use your personal data
+        We process collected data for the following purposes:
+        Providing the Services: We use the IP address and MAC address, Device-ID, the
+        version of the operation system of the Smart TV, client type of your Smart TV and its
+        panel resolution, the project ID (i.e. information regarding configuration files), your DTV
+        channel list, viewed channels, time zone, country and language settings to provide your
+        Smart TV with access to the Services and services provided by content partners.
+        Purposes include (but are not limited to) authentication, providing location based
+        services to you (e.g. weather forecasts); abuse handling, management of security
+        incidents, monitoring of availability of the Services, and providing backup services of
+        user preferences.
+        Authentication: We use the Device-ID and MAC address for authentication purposes.
+        Software updates: Each time your Smart TV is powered on, it will provide us with the
+        IP address, Device-ID, software version, client type of your Smart TV, project ID (i.e.
+        configuration files), user ID, serial number to offer you and provide you with appropriate
+        software updates.
+        Improving the Services: We use aggregated and anonymized usage data (i.e. data
+        about your interaction with the Services) to improve the user experience of the Services.
+        Serving advertisements: We use the information in advertising cookies to allow the
+        system to log which advertisements have been shown on your Smart TV in order to
+        make sure that you do not receive too many similar advertisements, and we are able to
+        settle our commercial arrangements with our advertising partners. External advertisers
+        that serve advertisements on the Services or the content partner websites after
+        coordination by our advertising server, may also use cookies to track you over multiple
+        websites, and to serve advertisements that reflect your personal preferences.
+        Optimizing advertisements: We use data related to advertising views and clicks on
+        advertisements to optimize the advertising experience of consumers in the Service.
+        Discounts: We provide the Device-ID to selected content partners to enable these partners to
+        identify to what extent they can provide you with free access to Video on Demand titles in their
+        collection.
+        Law enforcement: We may be required to provide data to competent law enforcement authorities or
+        courts of justice. If we do so, we will only do so subject to a binding legal instrument like a warrant or a
+        judicial order, which requires us to cooperate with the relevant authorities.
+        Use of the Services is possible by using pseudonyms, unless specific services require that you
+        provide your name and/or email address.
+        5.Categories of recipients
+        Company shares your personal data collected during your use of the Services only with the following
+        third parties:
+        With third party providers of Smart TV services if you request such services.
+        With third party content partners if you request certain content provided by such content partners (e.g.
+        in order to provide you with the GoLive IP TV service, we may share your TV client type, IP address
+        and language settings with the legal entity providing the GoLive service).
+        To the extent you have consented to the sharing of specific personal data with third parties above,
+        Company will share your personal data with such third parties.
+        With outsourcing service providers as data processors assisting Company with providing the
+        Services.
+        Company shares your personal data with other third parties only if Company is obligated to do so on
+        the basis of legal requirements (e.g. to courts or criminal prosecution authorities), you have consented
+        to the respective sharing or the sharing is otherwise lawful under applicable law.
+        6.Countries in which your data will be processed
+        Company and/or some of the recipients of your personal data listed above may be located outside of
+        the European Economic Area (i.e. in the following countries: Peoples Republic of China, United States
+        of America). Therefore, your personal data may be processed in countries which are not recognized
+        as providing an adequate level of protection of personal data in accordance with Directive 95\/46\/EC of
+        the European Parliament and of the Council of 24 October 1995 on the protection of individuals with
+        regard to the processing of personal data and on the free movement of such data.
+        7.Your rights
+        You may contact Company in order to receive information about your personal data processed by
+        Company and/or to exercise your statutory rights regarding access, rectification, deletion and blocking
+        of your personal data; and/or to object the processing of your personal data for purposes of marketing
+        and/or market or opinion research.
+        8.Changes to the Privacy Policy
+        To improve our Services we may require amendments to this Privacy Policy – e.g. by the implementation of new technologies or the introduction of new services. We reserve the right to change or supplement this Privacy Policy at any time.
+        9.Contact information
+
+If you have any questions about the Privacy Policy or would like to complain about our handling of your personal data, please contact us.
+
+Version: 1.0

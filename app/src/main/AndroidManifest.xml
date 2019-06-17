@@ -22,6 +22,8 @@
         <activity android:name=".activity.MyListViewActivity" />
         <activity android:name=".activity.ComponentsActivity" />
         <activity android:name=".activity.MultiListViewActivity" />
+        <activity android:name=".activity.DynamicBroadcastActivity" />
+        <receiver android:name=".activity.DynamicBroadcastActivity$DynamicBroadcastReceiver"></receiver>
     </application>
 
 </manifest>
