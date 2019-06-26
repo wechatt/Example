@@ -6,5 +6,6 @@
     <string name="dynamic_broadcast">动态广播</string>
     <string name="send_dynamic">发送动态广播</string>
     <string name="test">test</string>
+    <string name="close_menu">关闭菜单</string>
 
 </resources>
