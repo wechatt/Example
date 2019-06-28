@@ -9,18 +9,18 @@
         android:id="@+id/test_menu2"
         android:orderInCategory="100"
         android:title="罗书法"
-        app:showAsAction="always"></item>
+        app:showAsAction="ifRoom"></item>
     <item
         android:id="@+id/test_menu3"
         android:icon="@mipmap/ic_launcher"
         android:orderInCategory="30"
         android:title="美文修"
-        app:showAsAction="always"></item>
+        app:showAsAction="ifRoom"></item>
     <item
         android:id="@+id/test_menu4"
         android:orderInCategory="50"
         android:title="天天"
-        app:showAsAction="always"></item>
+        app:showAsAction="ifRoom"></item>
     　　　
     <item
         android:id="@+id/test_menu5"

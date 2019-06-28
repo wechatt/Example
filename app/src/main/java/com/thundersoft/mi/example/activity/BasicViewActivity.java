@@ -24,6 +24,13 @@ public class BasicViewActivity extends Activity {
                 break;
             case R.id.menu:
                 startActivity(new Intent(this, MenuActivity.class));
+                break;
+            case R.id.contextMenu:
+                startActivity(new Intent(this, ContextMenuActivity.class));
+                break;
+            case R.id.subMenu:
+                startActivity(new Intent(this, SubMenuActivity.class));
+                break;
             default :
                 break;
         }

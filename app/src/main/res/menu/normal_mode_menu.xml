@@ -5,6 +5,12 @@
     android:id="@+id/menu_item_delete"
     android:icon="@drawable/ic_launcher_background"
     app:showAsAction="ifRoom|withText"
-    android:title="华为好样的"
+    android:title="新加入的１"
     ></item>
+    <item
+        android:id="@+id/test_menu6"
+        android:icon="@drawable/ic_launcher_background"
+        app:showAsAction="ifRoom|withText"
+        android:title="新加入的２"
+        ></item>
 </menu>

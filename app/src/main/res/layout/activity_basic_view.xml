@@ -31,7 +31,19 @@
                 android:onClick="down"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Menu"/>
+                android:text="OptionsMenu"/>
+            <Button
+                android:id="@+id/contextMenu"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="contextMenu"/>
+            <Button
+                android:id="@+id/subMenu"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="subMenu"/>
         </LinearLayout>
     </ScrollView>
 

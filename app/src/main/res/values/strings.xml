@@ -7,5 +7,9 @@
     <string name="send_dynamic">发送动态广播</string>
     <string name="test">test</string>
     <string name="close_menu">关闭菜单</string>
+    <string name="context_menu_add">添加</string>
+    <string name="context_menu_remove">删除</string>
+    <string name="context_menu_update">更新</string>
+
 
 </resources>
