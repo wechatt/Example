@@ -1,5 +1,7 @@
 package com.thundersoft.mi.example.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -50,10 +52,10 @@ public class MenuActivity extends AppCompatActivity {
          *
          * @param menu
          * @return
-         *    // 菜单项点击，不仅提供onOptionsItemSelected()的一种触发方式，我们将在后面试验其他的两种方法，
-         * 如果我们希望将菜单项点击的事件传递下去，继续触发其他处理，则返回false，如果我们认为全部已经处理完，到此为止，
-         * 不需要将事件传递下去，则返回true。如果采用return super.onOptionsItemSelected(item); 则返回值为flase，
-         * 即系统缺省返回false。
+         *            *
+         * menu item同样支持click listener，但是这种方式在性能上没有onOptionItemSelected()节省，所以一般情况，
+         * 我们仍会使用onOptionItemSelected()。但是click listener的优先级别比onOptionItemSelected()高，
+         * 也就是菜单项点击后，先触发click listener，如果返回flase（未处理完，继续传递事件），才会进一步触发onOptionItemSelected()。
          */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -64,7 +66,29 @@ public class MenuActivity extends AppCompatActivity {
          */
         Log.d(TAG,"onCreateOptionsMenu");
         getMenuInflater().inflate(R.menu.test_menu,menu);
-        return true;
+        MenuItem item = menu.add(Menu.NONE, Menu.FIRST, 0, "设置click事件");
+        item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {//先执行onMenuItemClick再执行onOptionsItemSelected
+                Log.d(TAG,"onMenuItemClick");
+                Toast.makeText(MenuActivity.this, "onMenuItemClick", Toast.LENGTH_SHORT).show();
+                return true;
+                //返回true则当点击"设置click事件"这个item时，不会执行onOptionsItemSelected方法，
+                // 点击其它的item还是会执行onOptionsItemSelected，如果return false,则表明事件还要继续往下面传递
+                //即要执行onOptionsItemSelected方法．
+            }
+        });
+
+        /**
+         * 将菜单项和intent关联，用户点击后，系统将自动执行startActivity(intent)。intent的优先级别低于onOptionItemSelected()。
+         * 例在如下，当用户按菜单项1后，系统会打开browser，并打开指定的网页
+         * 关联intent，该intent会在执行完onOptionsItemSelected()后执行，当然onOptionsItemSelected()要返回false。
+         */
+        MenuItem intentItem = menu.add(Menu.NONE, Menu.FIRST, 0, "启动intent");
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("http://blog.csdn.net/flowingflying"));
+        intentItem.setIntent(intent);
+        return true;//返回true表示要显示menu,这个返回值在创建之初就是返回的true
     }
 
     @Override
@@ -92,8 +116,8 @@ public class MenuActivity extends AppCompatActivity {
          * add()方法返回的是MenuItem对象，调用其setIcon()方法，为相应MenuItem设置Icon 
          */
         //menu.add(Menu.NONE, Menu.FIRST, 0, "新");
-        return true;
-        //return super.onPrepareOptionsMenu(menu);
+        //return true; //返回true表示要显示menu
+        return super.onPrepareOptionsMenu(menu);
     }
 
     @Override
@@ -107,6 +131,16 @@ public class MenuActivity extends AppCompatActivity {
         super.onOptionsMenuClosed(menu);
     }
 
+        /**
+         *
+         * @param item
+         * @return
+         *   优先级别低于onMenuItemClick（)
+         *   菜单项点击，不仅提供onOptionsItemSelected()的一种触发方式，我们将在后面试验其他的两种方法，
+         *   如果我们希望将菜单项点击的事件传递下去，继续触发其他处理，则返回false，如果我们认为全部已经处理完，到此为止，
+         *   不需要将事件传递下去，则返回true。如果采用return super.onOptionsItemSelected(item); 则返回值为flase，
+         *   即系统缺省返回false。
+         */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         /**
@@ -133,7 +167,7 @@ public class MenuActivity extends AppCompatActivity {
         }
         title = item.getTitle().toString();
         Toast.makeText(this,title,Toast.LENGTH_SHORT).show();
-        return true;
+        return false;
         //return super.onOptionsItemSelected(item);
     }
 }

@@ -20,7 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BasicViewActivity" />
+        <activity android:name=".activity.BasicViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+
+            </intent-filter>
+        </activity>
         <activity android:name=".activity.MyListViewActivity" />
         <activity android:name=".activity.ComponentsActivity" />
         <activity android:name=".activity.MultiListViewActivity" />
