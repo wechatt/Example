@@ -44,6 +44,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="subMenu"/>
+            <Button
+                android:id="@+id/progressBar"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ProgressBar"/>
+            <Button
+                android:id="@+id/alertDialog"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AlertDialog"/>
+            <Button
+                android:id="@+id/progressDialog"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ProgressDialog"/>
         </LinearLayout>
     </ScrollView>
 

@@ -33,7 +33,6 @@
                 android:scrollbars="vertical"
                 android:text="@string/test"/>
 
-
         </LinearLayout>
 
 

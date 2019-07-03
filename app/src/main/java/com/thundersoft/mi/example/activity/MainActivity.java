@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this,ComponentsActivity.class));
                 break;
             case R.id.basicView:
-                startActivity(new Intent(this,BasicViewActivity.class));
+                startActivity(new Intent(this,BasicViewActivity.class ));
                 break;
             default:
                     break;

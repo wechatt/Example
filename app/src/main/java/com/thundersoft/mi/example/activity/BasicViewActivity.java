@@ -31,6 +31,15 @@ public class BasicViewActivity extends Activity {
             case R.id.subMenu:
                 startActivity(new Intent(this, SubMenuActivity.class));
                 break;
+            case R.id.progressBar:
+                startActivity(new Intent(this,ProgressBarActivity.class));
+                break;
+            case R.id.alertDialog:
+                startActivity(new Intent(this,AlertDialogActivity.class));
+                break;
+            case R.id.progressDialog:
+                startActivity(new Intent(this,ProgressDialogActivity.class));
+                break;
             default :
                 break;
         }
