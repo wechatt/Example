@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ProgressDialogActivity"></activity>
+        <activity android:name=".activity.FragmentActivity"></activity>
+        <activity android:name=".activity.FeaturesActivity" />
+        <activity android:name=".activity.ProgressDialogActivity" />
         <activity android:name=".activity.AlertDialogActivity" />
         <activity android:name=".activity.ProgressBarActivity" />
         <activity android:name=".activity.SubMenuActivity" />

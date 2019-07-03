@@ -20,6 +20,9 @@ public class ComponentsActivity extends Activity {
             case R.id.dynamic_broadcast:
                 startActivity(new Intent(this,DynamicBroadcastActivity.class));
                 break;
+            case R.id.fragment_life_cycle:
+                startActivity(new Intent(this,FragmentActivity.class));
+                break;
 
         }
 

@@ -24,7 +24,12 @@
                 android:layout_height="wrap_content"
                 android:onClick="down"
                 android:text="基本控件"/>
-
+            <Button
+                android:id="@+id/features_bt"
+                android:onClick="down"
+                android:text="@string/features"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/test"
                 android:layout_width="100dp"
