@@ -5,68 +5,42 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.thundersoft.mi.example.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link LeftFragment.OnFragmentInteractionListener} interface
+ * {@link CenterFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link LeftFragment#newInstance} factory method to
+ * Use the {@link CenterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-
 /**
- * @author TuYong
- * @create 19-7-4 *
- * @Email tuyong0125@thundersoft.com
+ * @author tuyong
+ * @create 2019/7/4
  * @Describe
- * 问题：如果让fragment和fragment之间进行通信．
- * 答案：它的基本思路非常简单，首先在一个碎片中可以得到与它相关联的活动，然后再通过这个活动去获取另外一个碎片的实例，这样也就实现了不同碎片之间的通信功能，
- *
- *  　启动之后活动的生命周期：
- *   07-04 17:33:35.037  2021  2327 I ActivityTaskManager: START u0 {cmp=com.thundersoft.mi.example/.activity.FragmentActivity} from uid 10130
- *   07-04 17:33:35.060 12126 12126 D FragmentActivity: onCreate
- *   07-04 17:33:35.075 12126 12126 D LeftFragment: onAttach
- *   07-04 17:33:35.075 12126 12126 D LeftFragment: onCreate
- *   07-04 17:33:35.076 12126 12126 D LeftFragment: onCreateView
- *   07-04 17:33:35.110 12126 12126 D LeftFragment: onActivityCreated
- *   07-04 17:33:35.110 12126 12126 D LeftFragment: onStart
- *   07-04 17:33:35.110 12126 12126 D FragmentActivity: onStart
- *   07-04 17:33:35.110 12126 12126 D FragmentActivity: onResume
- *   07-04 17:33:35.111 12126 12126 D LeftFragment: onResume
- *
- *  退出之后的生命周期：
- *   07-04 17:35:58.588 12126 12126 D LeftFragment: onPause
- *   07-04 17:35:58.588 12126 12126 D FragmentActivity: onPause
- *   07-04 17:35:59.087 12126 12126 D LeftFragment: onStop
- *   07-04 17:35:59.087 12126 12126 D FragmentActivity: onStop
- *   07-04 17:35:59.088 12126 12126 D LeftFragment: onDestroyView
- *   07-04 17:35:59.090 12126 12126 D LeftFragment: onDestroy
- *   07-04 17:35:59.090 12126 12126 D LeftFragment: onDetach
- *   07-04 17:35:59.090 12126 12126 D FragmentActivity: onDestroy
+ * CenterFragment在被其它Fragment替换replace时，并不会执行任何生命周期方法，
+ * 当使用addToBackStack将CenterFragment添加到堆栈中时，当点击返回键从其它
+ * Fragment返回到CenterFragment时，也不会执行生命周期方法
  */
-public class LeftFragment extends Fragment implements View.OnClickListener {
+public class CenterFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static final String TAG = "LeftFragment";
+    private static final String TAG = "CenterFragment";
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-    private Button right_bt;
 
-    public LeftFragment() {
+    public CenterFragment() {
         // Required empty public constructor
     }
 
@@ -76,11 +50,11 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment LeftFragment.
+     * @return A new instance of fragment CenterFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LeftFragment newInstance(String param1, String param2) {
-        LeftFragment fragment = new LeftFragment();
+    public static CenterFragment newInstance(String param1, String param2) {
+        CenterFragment fragment = new CenterFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -104,14 +78,6 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG,"onCreate");
-        /**
-         * 通过此方法可以获取Fragment所依附的Activity对象
-         */
-        //FragmentActivity activity = getActivity();
-        /**
-         * 通过此方法可以获取Fragment所依附的Context对象
-         */
-        Context context = getContext();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -123,15 +89,13 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         Log.d(TAG,"onCreateView");
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_left, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_center, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.d(TAG,"onActivityCreated");
-
     }
 
     @Override
@@ -175,11 +139,6 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
         super.onDetach();
         Log.d(TAG,"onDetach");
         mListener = null;
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 
     // TODO: Rename method, update argument and hook method into UI event

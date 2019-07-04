@@ -15,5 +15,7 @@
     <string name="fragment_life_cycle">Fragment生命周期</string>
     <string name="replace_right_layout">替换右边的布局</string>
     <string name="replace_layout">我被替换啦</string>
+    <string name="one_fragment_life_cycle">Fragment生命周期2</string>
+    <string name="replace_center_layout">替换布局</string>
 
 </resources>

@@ -23,6 +23,9 @@ public class ComponentsActivity extends Activity {
             case R.id.fragment_life_cycle:
                 startActivity(new Intent(this,FragmentActivity.class));
                 break;
+            case R.id.one_fragment_life_cycle:
+                startActivity(new Intent(this,FragmentFullInActivity.class));
+                break;
 
         }
 
