@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.LeftFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/right_bt"
+    android:id="@+id/fragment_full_in_layout"
+    tools:context=".activity.FragmentFullInActivity">
+    <fragment
+        android:name="com.thundersoft.mi.example.fragment.LeftFragment"
+        android:id="@+id/fragment_in_activity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/replace_right_layout" />
-
+        android:layout_height="match_parent">
+    </fragment>
 </FrameLayout>

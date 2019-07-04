@@ -13,9 +13,7 @@
     <string name="get_px">获取屏幕分辨率</string>
     <string name="features">需求</string>
     <string name="fragment_life_cycle">Fragment生命周期</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="replace_right_layout">替换右边的布局</string>
+    <string name="replace_layout">我被替换啦</string>
 
 </resources>
