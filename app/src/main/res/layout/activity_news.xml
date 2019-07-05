@@ -3,15 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.CenterFragment">
+    tools:context=".activity.NewsActivity">
 
-
-    <TextView
-        android:id="@+id/center_bt"
+    <fragment
+        android:id="@+id/news_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textColor="@android:color/holo_blue_bright"
-        android:text="@string/center_fragment" />
+        android:name="com.thundersoft.mi.example.fragment.NewsFragment">
 
+    </fragment>
 </LinearLayout>

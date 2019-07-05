@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.thundersoft.mi.example.R;
 import com.thundersoft.mi.example.fragment.LeftFragment;
@@ -21,10 +22,25 @@ import com.thundersoft.mi.example.fragment.dummy.DummyContent;
  * @create 19-7-4 *
  * @Email tuyong0125@thundersoft.com
  * @Describe
+ *
+ *　当fragment在布局文件中写死时，当其被替换replace时会有一些奇怪的现象，例如在activity_fragment.xml中
+ * 　LeftFragmen和RightItemFragment都写死在布局中啦，
+ * 当用ReplaceFragment来replac掉RightItemFragment时
+ *
+ * １：执行啦addToBackStack的情况下
+ * RightItemFragment会依次执行:onPause-onStop-onDestroyView
+ * 此时RigthItemFragment进栈，并没有被销毁
+ * 当按返回键使ReplaceFragment出栈时，由于显示出来的RightItemFragment在布局中写死啦，所以它并不会执行任何
+ * 生命周期方法．
+ *
+ * 还可以通过 onSaveInstanceState()方法来保存数据，因为进入停止状态的碎片有可能在系统内存不足的时候被回收。保存下来的数据在
+ * onCreate()、onCreateView()和 onActivityCreated()这三个方法中你都可以重新得到，它们都含
+ * 有一个 Bundle 类型的 savedInstanceState 参数。
+ *
  */
 public class FragmentActivity extends AppCompatActivity implements LeftFragment.OnFragmentInteractionListener , RightItemFragment.OnListFragmentInteractionListener , View.OnClickListener {
 
-    private Button right_bt;
+    private TextView right_bt;
     private boolean isRightFragment = true;
     private Fragment rightFragment;
     private static final String TAG = "FragmentActivity";
@@ -72,7 +88,7 @@ public class FragmentActivity extends AppCompatActivity implements LeftFragment.
         /**
          * Activity中可以通过此方法获取布局文件中的Fragment实例
          */
-        rightFragment = getFragmentManager().findFragmentById(R.id.right_fragment);
+        //rightFragment = getFragmentManager().findFragmentById(R.id.right_fragment);
     }
 
     /**

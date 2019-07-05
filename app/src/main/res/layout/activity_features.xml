@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
@@ -16,6 +17,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/get_px"/>
+            <Button
+                android:id="@+id/news"
+                android:onClick="featureDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/news_app"/>
 
         </LinearLayout>
     </ScrollView>

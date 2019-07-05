@@ -1,5 +1,6 @@
 package com.thundersoft.mi.example.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,9 @@ public class FeaturesActivity extends AppCompatActivity {
             case R.id.getPx:
                 String px = getPx();
                 getPx.setText(px);
+                break;
+            case R.id.news:
+                startActivity(new Intent(this,NewsActivity.class));
                 break;
         }
     }

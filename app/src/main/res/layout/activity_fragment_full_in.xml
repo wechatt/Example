@@ -14,19 +14,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="fragment1" />
+            android:text="left" />
         <Button
             android:id="@+id/center_bt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="fragment2" />
+            android:text="center" />
         <Button
             android:id="@+id/right_bt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="fragment3" />
+            android:text="right" />
     </LinearLayout>
 
     <FrameLayout
@@ -34,11 +34,7 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp">
-        <fragment
-            android:id="@+id/fragment_in_activity"
-            android:name="com.thundersoft.mi.example.fragment.CenterFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></fragment>
+
     </FrameLayout>
 
 </LinearLayout>

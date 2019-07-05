@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.FragmentFullInActivity"></activity>
+        <activity android:name=".activity.NewsActivity"></activity>
+        <activity android:name=".activity.FragmentFullInActivity" />
         <activity android:name=".activity.FragmentActivity" />
         <activity android:name=".activity.FeaturesActivity" />
         <activity android:name=".activity.ProgressDialogActivity" />

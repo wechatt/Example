@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffff00"
     tools:context=".fragment.ReplaceFragment">
 
     <TextView
+        android:id="@+id/replace_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textColor="@android:color/holo_purple"
+        android:gravity="center"
         android:text="@string/replace_layout" />
 
 </FrameLayout>
