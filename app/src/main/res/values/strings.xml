@@ -22,5 +22,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="database_crud">数据库增删改查</string>
+    <string name="create_database">创建数据库</string>
+    <string name="database_add">添加数据</string>
 
 </resources>

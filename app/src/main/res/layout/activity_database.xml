@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DatabaseActivity">
+
+    <Button
+        android:id="@+id/create_database"
+        android:onClick="databaseDown"
+        android:text="@string/create_database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/ll_add"
+        android:orientation="horizontal"
+        android:layout_below="@id/create_database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/book_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="name"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/book_author"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="author"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/book_pages"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="pages"
+            android:inputType="number"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/book_price"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="price"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/database_add"
+        android:layout_below="@id/ll_add"
+        android:onClick="databaseDown"
+        android:text="@string/database_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
