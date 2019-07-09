@@ -1,18 +1,26 @@
 package com.thundersoft.mi.example.activity;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.thundersoft.mi.example.R;
 import com.thundersoft.mi.example.database.MyDatabaseHelper;
 
+/**
+ * @author TuYong
+ * @create 19-7-9 *
+ * @Email tuyong0125@thundersoft.com
+ * @Describe
+ * SQL 的全称是 Structured Query Language
+ */
 public class DatabaseActivity extends AppCompatActivity {
 
     private MyDatabaseHelper dabaseHelper;
@@ -21,19 +29,32 @@ public class DatabaseActivity extends AppCompatActivity {
     private EditText mBookAuthor;
     private EditText mBookPages;
     private EditText mBookPrice;
+    private EditText mNeedUpdatePriceBookName;
+    private EditText mNewBookPrice;
+    private EditText mPagesEt;
+    private TextView data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
+        createDatabase();
         initView();
     }
 
     private void initView() {
+        //add
         mBookName = findViewById(R.id.book_name);
         mBookAuthor = findViewById(R.id.book_author);
         mBookPages = findViewById(R.id.book_pages);
         mBookPrice = findViewById(R.id.book_price);
+        //update
+        mNeedUpdatePriceBookName = findViewById(R.id.need_update_price_book_name);
+        mNewBookPrice = findViewById(R.id.new_book_price);
+        //delete
+        mPagesEt = findViewById(R.id.need_to_delete_book_where_pages_is_not_requirements);
+        //query
+        data = findViewById(R.id.database_data);
     }
 
     public void databaseDown(View v){
@@ -42,13 +63,116 @@ public class DatabaseActivity extends AppCompatActivity {
                 createDatabase();
                 break;
             case R.id.database_add:
-                 add();
+                insert();
                  break;
+            case R.id.database_update:
+                update();
+                break;
+            case R.id.database_delete:
+                delete();
+                break;
+            case R.id.database_delete_all:
+                deleteAll();
+                break;
         }
+        query();
     }
 
-    private void add() {
-        ContentValues contentValues = new ContentValues();
+    /**
+     * SQLiteDatabase 中还提供了一个 query()方法用于对数据进行查询。
+     * 这个方法的参数非常复杂，最短的一个方法重载也需要传入七个参数。那我们就先来看一下
+     * 这七个参数各自的含义吧，第一个参数不用说，当然还是表名，表示我们希望从哪张表中查
+     * 询数据。第二个参数用于指定去查询哪几列，如果不指定则默认查询所有列。第三、第四个
+     * 参数用于去约束查询某一行或某几行的数据，不指定则默认是查询所有行的数据。第五个参
+     * 数用于指定需要去 group by 的列，不指定则表示不对查询结果进行 group by 操作。第六个参
+     * 数用于对 group by 之后的数据进行进一步的过滤，不指定则表示不进行过滤。第七个参数用
+     * 于指定查询结果的排序方式，不指定则表示使用默认的排序方式。
+     */
+    private void query() {
+        //查询book表中的所有数据
+        Cursor cursor = writableDatabase.query("book", null, null, null, null, null, null);
+        StringBuffer sb = new StringBuffer();
+        if (cursor.moveToFirst()){
+            do {
+                //遍历cursor数据
+                String name = cursor.getString(cursor.getColumnIndex("name"));
+                String author = cursor.getString(cursor.getColumnIndex("author"));
+                int pages = cursor.getInt(cursor.getColumnIndex("pages"));
+                double price = cursor.getDouble(cursor.getColumnIndex("price"));
+                sb.append("name =" + name + "; author =" + author + "; pages ="+ pages + "; price ="+ price +"\n");
+
+            }while(cursor.moveToNext());
+
+        }
+        cursor.close();
+        data.setText(sb);
+    }
+
+    /**
+     * 删除所有数据
+     */
+    private void deleteAll() {
+        writableDatabase.delete("book",null,null);
+    }
+
+    /**
+     * SQLiteDatabase 中提供了一个 delete()方法专门用于删除数据，这个方法接收三个参数，第一
+     * 个参数仍然是表名，这个已经没什么好说的了，第二、第三个参数又是用于去约束删除某一
+     * 行或某几行的数据，不指定的话默认就是删除所有行。
+     */
+    private void delete() {
+        String pages = mPagesEt.getText().toString();
+        if (TextUtils.isEmpty(pages)){
+            Toast.makeText(this, "pages is empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        int result = writableDatabase.delete("book", "pages > ?", new String[]{pages});
+        if (result==1){
+            Toast.makeText(this, "delete book who＇s pages >"+pages+ " success", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "delete book who＇s pages >"+pages+ " fail", Toast.LENGTH_SHORT).show();
+        }
+
+        mPagesEt.setText("");
+    }
+
+    /**
+     * SQLiteDatabase 中也是提供了一个非常好用的 update()方法用于对数据进行更新，这个方法
+     * 接收四个参数，第一个参数和 insert()方法一样，也是表名，在这里指定去更新哪张表里的数
+     * 据。第二个参数是 ContentValues 对象，要把更新数据在这里组装进去。第三、第四个参数
+     * 用于去约束更新某一行或某几行中的数据，不指定的话默认就是更新所有行。
+     */
+    private void update() {
+        String bookName = mNeedUpdatePriceBookName.getText().toString();
+        String newBookPrice = mNewBookPrice.getText().toString();
+        if (TextUtils.isEmpty(bookName)|TextUtils.isEmpty(newBookPrice)){
+            Toast.makeText(this,"数据不能为空",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        double bookPrice = Double.parseDouble(newBookPrice);
+        ContentValues updateValues = new ContentValues();
+        updateValues.put("price",bookPrice);
+        int result = writableDatabase.update("book", updateValues, "name = ?", new String[]{bookName});
+        if (result==1){
+            Toast.makeText(this,"update price success",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this,"update price fail",Toast.LENGTH_SHORT).show();
+        }
+        mNeedUpdatePriceBookName.setText("");
+        mNewBookPrice.setText("");
+
+    }
+
+    /**
+     * SQLiteDatabase 中提供了一个 insert()方法，这个方法就是专门用于添加数据的。它接收三个
+     * 参数，第一个参数是表名，我们希望向哪张表里添加数据，这里就传入该表的名字。第二个
+     * 参数用于在未指定添加数据的情况下给某些可为空的列自动赋值 NULL，一般我们用不到这
+     * 个功能，直接传入 null 即可。第三个参数是一个 ContentValues 对象，它提供了一系列的 put()
+     * 方法重载，用于向 ContentValues 中添加数据，只需要将表中的每个列名以及相应的待添加
+     * 数据传入即可。
+     */
+    private void insert() {
+        ContentValues addValues = new ContentValues();
         String name = mBookName.getText().toString();
         String author = mBookAuthor.getText().toString();
         String pages = mBookPages.getText().toString();
@@ -59,13 +183,19 @@ public class DatabaseActivity extends AppCompatActivity {
             page = Integer.parseInt(pages);
         }
         if (!TextUtils.isEmpty(price)){
-            prices = Integer.parseInt(price);
+            prices = Double.parseDouble(price);
         }
-        contentValues.put("name",name);
-        contentValues.put("author",author);
-        contentValues.put("pages",page);
-        contentValues.put("price",prices);
-        writableDatabase.insert("book",null,contentValues);
+
+        addValues.put("price",prices);
+        addValues.put("pages",page);
+        addValues.put("name",name);
+        addValues.put("author",author);
+
+        writableDatabase.insert("book",null,addValues);
+        mBookName.setText("");
+        mBookAuthor.setText("");
+        mBookPages.setText("");
+        mBookPrice.setText("");
         Toast.makeText(this,"add",Toast.LENGTH_SHORT).show();
     }
 

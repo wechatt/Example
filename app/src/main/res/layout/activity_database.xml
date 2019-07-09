@@ -51,4 +51,65 @@
         android:text="@string/database_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/ll_update"
+        android:layout_below="@id/database_add"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/need_update_price_book_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="@string/need_update_price_book_name"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/new_book_price"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="new BookPrice"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/database_update"
+        android:layout_below="@id/ll_update"
+        android:onClick="databaseDown"
+        android:text="@string/database_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/need_to_delete_book_where_pages_is_not_requirements"
+        android:layout_below="@id/database_update"
+        android:hint="@string/need_to_delete_book_where_pages_is_not_requirements"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/database_delete"
+        android:layout_below="@id/need_to_delete_book_where_pages_is_not_requirements"
+        android:onClick="databaseDown"
+        android:text="@string/database_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/database_delete_all"
+        android:layout_below="@id/database_delete"
+        android:onClick="databaseDown"
+        android:text="@string/database_delete_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/database_query"
+        android:layout_below="@+id/database_delete_all"
+        android:onClick="databaseDown"
+        android:text="@string/database_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/database_data"
+        android:scrollbars="vertical"
+        android:layout_below="@id/database_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

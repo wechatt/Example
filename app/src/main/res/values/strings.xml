@@ -25,5 +25,11 @@
     <string name="database_crud">数据库增删改查</string>
     <string name="create_database">创建数据库</string>
     <string name="database_add">添加数据</string>
+    <string name="database_update">更新数据</string>
+    <string name="database_delete">删除数据</string>
+    <string name="database_delete_all">删除所有数据</string>
+    <string name="database_query">查询数据</string>
+    <string name="need_update_price_book_name">需要更新价格的书名</string>
+    <string name="need_to_delete_book_where_pages_is_not_requirements">删除大于多少页的书</string>
 
 </resources>
