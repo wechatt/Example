@@ -31,5 +31,5 @@
     <string name="database_query">查询数据</string>
     <string name="need_update_price_book_name">需要更新价格的书名</string>
     <string name="need_to_delete_book_where_pages_is_not_requirements">删除大于多少页的书</string>
-
+    <string name="transaction_replace">开启事务替换数据</string>
 </resources>

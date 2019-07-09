@@ -6,7 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +23,7 @@ import com.thundersoft.mi.example.database.MyDatabaseHelper;
  * @Describe
  * SQL 的全称是 Structured Query Language
  */
-public class DatabaseActivity extends AppCompatActivity {
+public class DatabaseActivity extends AppCompatActivity implements View.OnClickListener {
 
     private MyDatabaseHelper dabaseHelper;
     private SQLiteDatabase writableDatabase;
@@ -33,6 +35,7 @@ public class DatabaseActivity extends AppCompatActivity {
     private EditText mNewBookPrice;
     private EditText mPagesEt;
     private TextView data;
+    private Button mTransactionReplace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,11 @@ public class DatabaseActivity extends AppCompatActivity {
         mPagesEt = findViewById(R.id.need_to_delete_book_where_pages_is_not_requirements);
         //query
         data = findViewById(R.id.database_data);
+        //使TextView具有滑动性，另外xml中还需要设置Android:scrollbars="vertical"
+        data.setMovementMethod(ScrollingMovementMethod.getInstance());
+        //事务
+        mTransactionReplace = findViewById(R.id.transaction_replace);
+        mTransactionReplace.setOnClickListener(this);
     }
 
     public void databaseDown(View v){
@@ -106,6 +114,8 @@ public class DatabaseActivity extends AppCompatActivity {
         }
         cursor.close();
         data.setText(sb);
+        //SQL语句执行查询
+        //writableDatabase.rawQuery("select * from book",null);
     }
 
     /**
@@ -132,8 +142,10 @@ public class DatabaseActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "delete book who＇s pages >"+pages+ " fail", Toast.LENGTH_SHORT).show();
         }
-
         mPagesEt.setText("");
+        //SQL语句删除数据库数据
+        //writableDatabase.execSQL("delete from book where pages > ?",
+        //                              new String[]{"200"});
     }
 
     /**
@@ -160,7 +172,9 @@ public class DatabaseActivity extends AppCompatActivity {
         }
         mNeedUpdatePriceBookName.setText("");
         mNewBookPrice.setText("");
-
+        //SQL语句进行数据库的更新
+        //writableDatabase.execSQL("update book set price = ? where name = ?" ,
+        //                             new String[] {"39.9","oneplus"});
     }
 
     /**
@@ -192,6 +206,9 @@ public class DatabaseActivity extends AppCompatActivity {
         addValues.put("author",author);
 
         writableDatabase.insert("book",null,addValues);
+        //Android还提供了一套SQL来操作数据库的方法execSQL(String sql,Object[] bindArgs);
+        //writableDatabase.execSQL("insert into book (name ,author ,pages ,price) values(?,?,?,?)",
+        //                          new String[]{"金庸","天龙八部","234","45.9"});
         mBookName.setText("");
         mBookAuthor.setText("");
         mBookPages.setText("");
@@ -204,5 +221,43 @@ public class DatabaseActivity extends AppCompatActivity {
         dabaseHelper = new MyDatabaseHelper(this, "example", null, 1);
         //调用getWritableDatabase若数据库不存在则创建数据库，若数据库已经存在，则不执行任何操作。
         writableDatabase = dabaseHelper.getWritableDatabase();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.transaction_replace:
+                transactionReplace();
+        }
+    }
+
+    private void transactionReplace() {
+        //开启事务
+        writableDatabase.beginTransaction();
+        try{
+            writableDatabase.delete("book",null,null);
+            /*if (true){
+                //手动抛出异常
+                throw new NullPointerException();
+            }*/
+            ContentValues transactionValues = new ContentValues();
+            transactionValues.put("name","King of lion");
+            transactionValues.put("author","Tom");
+            transactionValues.put("pages",123);
+            transactionValues.put("price",49.9);
+            writableDatabase.insert("book",null,transactionValues);
+            //事务成功
+            writableDatabase.setTransactionSuccessful();
+            Toast.makeText(this,"Transaction Successful",Toast.LENGTH_SHORT).show();
+        }catch(Exception e){
+             e.printStackTrace();
+            Toast.makeText(this,"Transaction Fail",Toast.LENGTH_SHORT).show();
+        }finally{
+            //结束事务
+            writableDatabase.endTransaction();
+        }
+
+
+
     }
 }

@@ -21,7 +21,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                                              + "name text,"
                                              + "author text,"
                                              + "pages integer,"
-                                             + "price real)";
+                                             + "price real,"
+                                             + "category_id integer)";
     private static final String CREATE_CATEGORY = "create table category (id integer primary key autoincrement,category_name text,category_code integer)";
     public MyDatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -37,6 +38,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+     //数据库升级的最佳写法
+        switch (oldVersion){
+            case 1:
+                db.execSQL(CREATE_CATEGORY);
+            case 2:
+                db.execSQL("alter table book add column category_id integer");
+            default :
 
+        }
     }
 }
