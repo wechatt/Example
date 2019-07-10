@@ -29,6 +29,9 @@ public class ComponentsActivity extends Activity {
             case R.id.database_crud:
                 startActivity(new Intent(this,DatabaseActivity.class));
                 break;
+            case R.id.content_resolver_phone:
+                startActivity(new Intent(this,ContentResolverPhoneActivity.class));
+                break;
 
         }
 

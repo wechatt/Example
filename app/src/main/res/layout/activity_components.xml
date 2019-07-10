@@ -27,4 +27,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/database_crud"/>
+    <Button
+        android:id="@+id/content_resolver_phone"
+        android:onClick="click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/content_resolver_phone"/>
 </LinearLayout>
