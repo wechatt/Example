@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.thundersoft.mi.example">
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ContentResolverPhoneActivity"></activity>
+        <activity android:name=".activity.NotificationActivity"></activity>
+        <activity android:name=".activity.ContentResolverPhoneActivity" />
         <activity android:name=".activity.DatabaseActivity" />
         <activity android:name=".activity.NewsActivity" />
         <activity android:name=".activity.FragmentFullInActivity" />
@@ -39,8 +41,11 @@
         <activity android:name=".activity.ComponentsActivity" />
         <activity android:name=".activity.MultiListViewActivity" />
         <activity android:name=".activity.DynamicBroadcastActivity" />
-        <provider android:name=".database.ExampleProvider"
-            android:authorities="com.thundersoft.mi.example.provider"></provider>
+
+        <provider
+            android:name=".database.ExampleProvider"
+            android:authorities="com.thundersoft.mi.example.provider" />
+
         <receiver android:name=".activity.DynamicBroadcastActivity$DynamicBroadcastReceiver" />
     </application>
 

@@ -34,4 +34,6 @@
     <string name="transaction_replace">开启事务替换数据</string>
     <string name="content_resolver_phone">内容解决者查询电话簿</string>
     <string name="get_contact">获取联系人</string>
+    <string name="notification">通知</string>
+    <string name="send_notification">发送通知</string>
 </resources>

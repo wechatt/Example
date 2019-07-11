@@ -62,6 +62,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ProgressDialog"/>
+            <Button
+                android:id="@+id/notification"
+                android:text="@string/notification"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 

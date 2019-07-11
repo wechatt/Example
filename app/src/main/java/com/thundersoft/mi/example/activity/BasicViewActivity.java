@@ -40,6 +40,9 @@ public class BasicViewActivity extends Activity {
             case R.id.progressDialog:
                 startActivity(new Intent(this,ProgressDialogActivity.class));
                 break;
+            case R.id.notification:
+                startActivity(new Intent(this,NotificationActivity.class));
+                break;
             default :
                 break;
         }
