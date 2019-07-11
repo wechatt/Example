@@ -2,8 +2,9 @@ package com.thundersoft.mi.example.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.Menu;
+
+import androidx.annotation.Nullable;
 
 import com.thundersoft.mi.example.R;
 

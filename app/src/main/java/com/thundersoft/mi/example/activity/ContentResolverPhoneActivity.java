@@ -1,19 +1,19 @@
 package com.thundersoft.mi.example.activity;
 
 import android.Manifest;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.thundersoft.mi.example.R;
 
@@ -31,10 +31,10 @@ public class ContentResolverPhoneActivity extends AppCompatActivity {
     }
 
     private void initPermission() {
-        Log.d(TAG,"checkSelfPermission="+ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS));
+        Log.d(TAG,"checkSelfPermission="+ ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS));
         //检查用户是否同意Manifest.permission.READ_CONTACTS权限，若同意checkSelfPermission返回0，反之返回-1.   PackageManager.PERMISSION_GRANTED的值是0
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)!= PackageManager.PERMISSION_GRANTED){
-            Log.d(TAG,"shouldShowRequestPermissionRationale = "+ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_CONTACTS));
+            Log.d(TAG,"shouldShowRequestPermissionRationale = "+ ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_CONTACTS));
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_CONTACTS)){
                 /**
                  * 用户已拒绝权限后，若调用此shouldShowRequestPermissionRationale，会返回true

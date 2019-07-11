@@ -3,26 +3,19 @@ package com.thundersoft.mi.example.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.thundersoft.mi.example.R;
-import com.thundersoft.mi.example.fragment.dummy.DummyContent;
 import com.thundersoft.mi.example.fragment.dummy.DummyContent.DummyItem;
-
-
-import static com.thundersoft.mi.example.fragment.MultiListViewFragment.TAG;
 
 /**
  * A fragment representing a list of Items.
  * <p/>
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
+ * import static com.thundersoft.mi.example.fragment.MultiListViewFragment.TAG;
  */
 /**
  * @author TuYong

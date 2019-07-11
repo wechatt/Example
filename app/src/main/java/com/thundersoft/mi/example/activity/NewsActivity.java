@@ -1,7 +1,8 @@
 package com.thundersoft.mi.example.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.thundersoft.mi.example.R;
 import com.thundersoft.mi.example.fragment.NewsFragment;

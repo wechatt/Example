@@ -2,7 +2,6 @@ package com.thundersoft.mi.example.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.app.Fragment;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -17,6 +16,8 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.thundersoft.mi.example.R;
 
@@ -74,10 +75,9 @@ public class MultiListViewFragment extends Fragment {
         @Override
         public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
 
-            //这是多选模式下特有的方法，监听列表项的选中状态变化，比如可以在里面进行CheckBox的UI更新，也可以是标题栏中选择的项的数量更新。
+            //这是多选模式下特有的方法，监听列表项的选中状态变化，比如可以在里面进行CheckBox的UI更新，也可以是标题栏中选择的项的数量更新。getCheckedItemCount()
             Log.i(TAG,"onItemCheckedStateChanged");
             mode.setTitle(getString(R.string.selected_num, fragment_multi_lv.getCheckedItemCount()));
-
         }
 
         @Override
