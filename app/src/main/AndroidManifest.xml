@@ -39,7 +39,8 @@
         <activity android:name=".activity.ComponentsActivity" />
         <activity android:name=".activity.MultiListViewActivity" />
         <activity android:name=".activity.DynamicBroadcastActivity" />
-
+        <provider android:name=".database.ExampleProvider"
+            android:authorities="com.thundersoft.mi.example.provider"></provider>
         <receiver android:name=".activity.DynamicBroadcastActivity$DynamicBroadcastReceiver" />
     </application>
 
