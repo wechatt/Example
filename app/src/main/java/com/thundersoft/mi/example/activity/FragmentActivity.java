@@ -54,7 +54,7 @@ public class FragmentActivity extends AppCompatActivity implements LeftFragment.
 
     @Override
     protected void onStart() {
-        super.onStart();
+        super.onStart();//startForegroundService(Intent service)
         Log.d(TAG,"onStart");
     }
 

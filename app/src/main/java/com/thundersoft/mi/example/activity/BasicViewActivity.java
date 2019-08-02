@@ -43,6 +43,12 @@ public class BasicViewActivity extends Activity {
             case R.id.notification:
                 startActivity(new Intent(this,NotificationActivity.class));
                 break;
+            case R.id.srollTextView :
+                startActivity(new Intent(this,ScrollTextViewActivity.class));
+                break;
+            case R.id.textViewScroll :
+                startActivity(new Intent(this,TextViewScrollActivity.class));
+                break;
             default :
                 break;
         }

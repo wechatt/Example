@@ -68,6 +68,18 @@
                 android:onClick="down"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/srollTextView"
+                android:text="@string/scroll_text_view"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/textViewScroll"
+                android:text="@string/text_view_scroll"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 

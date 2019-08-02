@@ -25,9 +25,10 @@ import com.thundersoft.mi.example.R;
  * @author tuyong
  * @create 2019/7/4
  * @Describe
- * CenterFragment在被其它Fragment替换replace时，并不会执行任何生命周期方法，
- * 当使用addToBackStack将CenterFragment添加到堆栈中时，当点击返回键从其它
- * Fragment返回到CenterFragment时，也不会执行生命周期方法
+ *
+ * fragment处理返回键
+ * https://blog.csdn.net/lin_dianwei/article/details/78914046
+ * https://blog.csdn.net/guxiao1201/article/details/40507387
  */
 public class CenterFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match

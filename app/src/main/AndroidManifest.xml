@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.NotificationActivity"></activity>
+        <activity android:name=".activity.TextViewScrollActivity"></activity>
+        <activity android:name=".activity.ScrollTextViewActivity" />
+        <activity android:name=".activity.NotificationActivity" />
         <activity android:name=".activity.ContentResolverPhoneActivity" />
         <activity android:name=".activity.DatabaseActivity" />
         <activity android:name=".activity.NewsActivity" />

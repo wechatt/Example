@@ -36,4 +36,7 @@
     <string name="get_contact">获取联系人</string>
     <string name="notification">通知</string>
     <string name="send_notification">发送通知</string>
+    <string name="scroll_text_view">上下滾動的textview</string>
+    <string name="text_view_scroll">各個方向滾動的textview</string>
+    <string name="text_view_scroll_content">Hello World!哈哈哈哈哈哈嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿\nHello World!哈哈哈哈哈哈嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿\nHello World!哈哈哈哈哈哈嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿</string>
 </resources>
