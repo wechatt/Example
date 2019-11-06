@@ -39,4 +39,6 @@
     <string name="scroll_text_view">上下滾動的textview</string>
     <string name="text_view_scroll">各個方向滾動的textview</string>
     <string name="text_view_scroll_content">Hello World!哈哈哈哈哈哈嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿\nHello World!哈哈哈哈哈哈嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿\nHello World!哈哈哈哈哈哈嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿</string>
+    <string name="popu_window">popuWindow</string>
+    <string name="java">java基礎</string>
 </resources>

@@ -18,7 +18,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="down"
-                android:text="listview"
+                android:text="tuyong"
                 />
             <Button
                 android:id="@+id/multiListView"
@@ -77,6 +77,12 @@
             <Button
                 android:id="@+id/textViewScroll"
                 android:text="@string/text_view_scroll"
+                android:onClick="down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/popuWindow"
+                android:text="@string/popu_window"
                 android:onClick="down"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

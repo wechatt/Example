@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/ll"
     android:orientation="vertical"
     tools:context="activity.MainActivity">
 
@@ -28,6 +29,12 @@
                 android:id="@+id/features_bt"
                 android:onClick="down"
                 android:text="@string/features"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/java_bt"
+                android:onClick="down"
+                android:text="@string/java"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView

@@ -1,10 +1,12 @@
 package com.thundersoft.mi.example.activity;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LinearLayout ll = (LinearLayout)findViewById(R.id.ll);
+       // ll.setForeground(getDrawable(R.drawable.apple));
         test = findViewById(R.id.test);
         String content = readTxtContent();
         test.setText(content);
@@ -42,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.features_bt:
                 startActivity(new Intent(this,FeaturesActivity.class));
+                break;
+            case R.id.java_bt:
+                startActivity(new Intent(this,JavaActivity.class));
             default:
                     break;
         }

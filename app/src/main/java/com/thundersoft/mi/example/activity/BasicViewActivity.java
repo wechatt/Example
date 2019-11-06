@@ -49,6 +49,9 @@ public class BasicViewActivity extends Activity {
             case R.id.textViewScroll :
                 startActivity(new Intent(this,TextViewScrollActivity.class));
                 break;
+            case R.id.popuWindow :
+                startActivity(new Intent(this,PopuWindowActivity.class));
+                break;
             default :
                 break;
         }
