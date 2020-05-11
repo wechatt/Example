@@ -1,0 +1,20 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/transparent" />
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+    <item android:state_focused="false">
+        <shape>
+            <solid android:color="@color/transparent" />
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="@color/digital_setup_select_spin_bg_color" />            　　　　　　　
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+</selector>

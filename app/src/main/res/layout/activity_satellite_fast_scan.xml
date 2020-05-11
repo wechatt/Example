@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Welcome"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="24sp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="10dp"
+        android:background="#FF878D9C" />
+
+    <TextView
+        android:id="@+id/textview_content"
+        android:layout_below="@id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="50dp"
+        android:text="We appreciate your purchase for RTK-TV"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="40dp"
+        android:text="Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Button>
+
+
+</RelativeLayout>

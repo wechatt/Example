@@ -1,1 +1,4 @@
-include ':app'
+include ':app', ':personallibrary'
+include ':myJava'
+include ':lib1'
+include ':downloaddemo'

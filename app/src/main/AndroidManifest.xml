@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.thundersoft.mi.example">
+    package="com.thundersoft.mi.example"
+     >
 
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
     <application
         android:name=".utils.MyApplication"
         android:allowBackup="true"
@@ -10,10 +14,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.SatelliteFastScanActivity"></activity>
+        <activity
+            android:name=".activity.DiseqcDialogActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".activity.SatelliteSanModelActivity" />
+        <activity
+            android:name=".activity.SelectOperatorActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name=".activity.PopuWindowActivity" />
-
         <activity android:name=".activity.RepeatingElementNumberActivity" />
-        <activity android:name=".activity.JavaActivity" />
+        <activity
+            android:name=".activity.JavaActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".activity.TextViewScrollActivity" />
         <activity android:name=".activity.ScrollTextViewActivity" />
         <activity android:name=".activity.NotificationActivity" />
@@ -46,14 +59,11 @@
         <activity android:name=".activity.MultiListViewActivity" />
         <activity android:name=".activity.DynamicBroadcastActivity" />
 
-
         <provider
             android:name=".database.ExampleProvider"
             android:authorities="com.thundersoft.mi.example.provider" />
 
         <receiver android:name=".activity.DynamicBroadcastActivity$DynamicBroadcastReceiver" />
     </application>
-
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
 </manifest>

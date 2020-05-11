@@ -48,7 +48,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this,FeaturesActivity.class));
                 break;
             case R.id.java_bt:
+                startActivity(new Intent(this,DiseqcDialogActivity.class));
+                break;
+            case R.id.satellite:
                 startActivity(new Intent(this,JavaActivity.class));
+                break;
             default:
                     break;
         }
