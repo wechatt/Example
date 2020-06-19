@@ -35,14 +35,15 @@
         <activity android:name=".activity.NewsActivity" />
         <activity android:name=".activity.FragmentFullInActivity" />
         <activity android:name=".activity.FragmentActivity" />
-        <activity android:name=".activity.FeaturesActivity" />
+        <activity android:name=".activity.FeaturesActivity"/>
         <activity android:name=".activity.ProgressDialogActivity" />
         <activity android:name=".activity.AlertDialogActivity" />
         <activity android:name=".activity.ProgressBarActivity" />
-        <activity android:name=".activity.SubMenuActivity" />
+        <activity android:name=".activity.SubMenuActivity"/>
         <activity android:name=".activity.ContextMenuActivity" />
         <activity android:name=".activity.MenuActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

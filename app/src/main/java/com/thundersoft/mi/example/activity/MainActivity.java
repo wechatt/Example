@@ -3,6 +3,7 @@ package com.thundersoft.mi.example.activity;
 import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     private String readTxtContent() {
         StringBuffer content = new StringBuffer();
         try {
-            InputStream inputStream = getResources().openRawResource(R.raw.privacy);
+            InputStream inputStream = getResources().openRawResource(R.raw.test);
             if (inputStream != null) {
                 InputStreamReader inputReader = new InputStreamReader(inputStream);
                 BufferedReader buffReader = new BufferedReader(inputReader);

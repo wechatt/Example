@@ -3,6 +3,7 @@ package com.thundersoft.mi.example.activity;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.ScrollingMovementMethod;
@@ -47,6 +48,9 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initView() {
+        Uri uri = Uri.parse("");
+        Cursor query = getContentResolver().query(null, null, null, null, "");
+        int columnCount = query.getColumnCount();
         //add
         mBookName = findViewById(R.id.book_name);
         mBookAuthor = findViewById(R.id.book_author);
@@ -219,7 +223,8 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
 
     private void createDatabase() {
         //new MyDatabaseHelper()并不会创建数据库，而是配置数据库的相关信息，如数据库的“名称”和“版本号”等
-        dabaseHelper = new MyDatabaseHelper(this, "example", null, 1);
+        dabaseHelper = new MyDatabaseHelper(this, "" +
+                "", null, 1);
         //调用getWritableDatabase若数据库不存在则创建数据库，若数据库已经存在，则不执行任何操作。
         writableDatabase = dabaseHelper.getWritableDatabase();
     }

@@ -72,5 +72,6 @@ public class DownloadTask extends AsyncTask<String , Integer , Integer > {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(downloadUrl).build();
         //client.
+        return 34;
     }
 }
