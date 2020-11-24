@@ -1,0 +1,19 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="settings"
+        android:enabled="true"
+        android:icon="@drawable/dani"
+        android:shortcutShortLabel="@string/my_short"
+        android:shortcutLongLabel="@string/my_long"
+        android:shortcutDisabledMessage="@string/my_disable">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.myview"
+            android:targetClass="com.example.myview.MainActivity" />
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.myview"
+            android:targetClass="com.example.myview.MainActivity" />
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+</shortcuts>

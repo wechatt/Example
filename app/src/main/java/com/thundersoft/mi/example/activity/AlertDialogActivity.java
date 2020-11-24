@@ -2,7 +2,9 @@ package com.thundersoft.mi.example.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ import com.thundersoft.mi.example.R;
  * 内容或者警告信息。比如为了防止用户误删重要内容，在删除前弹出一个确认对话框。
  */
 public class AlertDialogActivity extends AppCompatActivity {
+    private static final String TAG = "AlertDialogActivity";
     private Button dialog_bt;
 
     @Override
@@ -35,6 +38,12 @@ public class AlertDialogActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.d(TAG, "dispatchTouchEvent: tuyong");
+        return super.dispatchTouchEvent(ev);
+    }
+
     private void showDialog(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("this is a title");
@@ -43,7 +52,7 @@ public class AlertDialogActivity extends AppCompatActivity {
          * setCancelable(true)设置为true时，当点击返回键或者dialog区域外时也可以让dialog消失
          * 设置为false ,这只有点击dialog上的"ok"或者"cancel"时才能取消dialog
          */
-        dialog.setCancelable(false);
+        //dialog.setCancelable(false);
         /**
          * 当setCancelable(false)时，点击返回键不能让dialog消失，这时我们可以
          * 给dialog添加KeyListener来对返回键予以处理就可以解决这个问题了
@@ -70,6 +79,17 @@ public class AlertDialogActivity extends AppCompatActivity {
 
             }
         });
-        dialog.show();
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener(){
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                Log.d(TAG, "onDismiss: tuyong");
+                finish();
+            }
+        });
+        //dialog.getWindow().setDimAmount(0f);
+        AlertDialog alert = dialog.show();
+        //设置弹框周边背景色透明度
+        alert.getWindow().setDimAmount(0f);
+
     }
 }

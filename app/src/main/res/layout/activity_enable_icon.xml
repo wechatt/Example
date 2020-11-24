@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.EnableIconActivity">
+    <TextView
+        android:id="@+id/isEnableTextView"
+        android:text="setComponentEnabledSetting使四大组件生效，是否生成图标"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <Button
+        android:text="enable"
+        android:id="@+id/enable"
+        android:onClick="down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Button>
+</LinearLayout>

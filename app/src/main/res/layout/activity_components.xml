@@ -33,4 +33,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/content_resolver_phone"/>
+    <Button
+        android:id="@+id/multi_window"
+        android:onClick="click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分屏模式的生命周期"/>
 </LinearLayout>

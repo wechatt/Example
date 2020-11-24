@@ -32,7 +32,9 @@ public class ComponentsActivity extends Activity {
             case R.id.content_resolver_phone:
                 startActivity(new Intent(this,ContentResolverPhoneActivity.class));
                 break;
-
+            case R.id.multi_window:
+                startActivity(new Intent(this,MultiWindowActivity.class));
+                break;
         }
 
     }

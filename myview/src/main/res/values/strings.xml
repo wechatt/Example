@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">MyVIew</string>
+    <string name="app_name">充气猫打我</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="my_short">Add widget</string>
+    <string name="my_long">my_long</string>
+    <string name="my_disable">my_disable</string>
 </resources>

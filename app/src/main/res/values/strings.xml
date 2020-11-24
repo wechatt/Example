@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Example</string>
+    <string name="app_name">example</string>
     <string name="delete_contacts">删除联系人罗书发</string>
     <string name="selected_num">删除 %d 联系人</string>
     <string name="my_menu">我的菜单</string>
@@ -41,4 +41,7 @@
     <string name="text_view_scroll_content">Hello World!哈哈哈哈哈哈嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿\nHello World!哈哈哈哈哈哈嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿\nHello World!哈哈哈哈哈哈嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿</string>
     <string name="popu_window">popuWindow</string>
     <string name="java">java基礎</string>
+    <string name="my_short">my_short</string>
+    <string name="my_long">my_long</string>
+    <string name="my_disable">my_disable</string>
 </resources>

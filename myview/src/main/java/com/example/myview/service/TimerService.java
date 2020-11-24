@@ -6,15 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
-
 import com.example.myview.R;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static android.content.ContentValues.TAG;
-
 public class TimerService extends Service {
+    private static final String TAG = "TimerService";
     public TimerService() {
     }
 private TimerTask tt = new TimerTask(){

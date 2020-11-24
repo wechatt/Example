@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,17 +19,27 @@ import android.widget.TextView;
 import com.thundersoft.mi.example.R;
 
 public class JavaActivity extends Activity {
-
+    private static final String TAG = "JavaActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_java);
     }
 
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            Log.d(TAG, "handleMessage: tuyong",new ThreadDeath());
+
+        }
+    };
+
     public void javaDown(View v){
         switch (v.getId()){
             case R.id.collectionRepeatingElementNumber:
-                showLogoutDialog();
+                handler.sendEmptyMessage(1);
+                Log.d(TAG, "javaDown: tuyong");
+                //showLogoutDialog();
                 break;
             default :
                 break;

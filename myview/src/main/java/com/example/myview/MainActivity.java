@@ -1,11 +1,14 @@
 package com.example.myview;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +26,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         View view = getView();
         setContentView(view);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                return false;
+            }
+        });
+isInMultiWindowMode();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     @Override

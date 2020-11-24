@@ -8,22 +8,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
-
-import androidx.lifecycle.ViewModelProvider;
-
 import com.example.myview.MainActivity;
 import com.example.myview.R;
 import com.example.myview.service.TimerService;
-
 import java.text.SimpleDateFormat;
 
-import static android.content.ContentValues.TAG;
 
 /**
  * Implementation of App Widget functionality.
  */
 public class NewAppWidget extends AppWidgetProvider {
-
+    private static final String TAG = "NewAppWidget";
     private static final int REQUEST_CODE = 123;
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
@@ -36,13 +31,11 @@ public class NewAppWidget extends AppWidgetProvider {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String formatTime = sdf.format(time);
         views.setTextViewText(R.id.appwidget_text, formatTime);
-        Log.d(TAG, "updateAppWidget: tuyong : setTextViewText2 =" + formatTime);
         Intent intent = new Intent(context, MainActivity.class);
         PendingIntent pi = PendingIntent.getActivity(context,REQUEST_CODE,intent,0);
         views.setOnClickPendingIntent(R.id.appwidget_text,pi);
-        Log.d(TAG, "updateAppWidget: tuyong :appWidgetId="+appWidgetId+";R.layout.new_app_widget =" + R.layout.new_app_widget+";R.id.appwidget_text="+R.id.appwidget_text);
         // Instruct the widget manager to update the widget
-        appWidgetManager.updateAppWidget(appWidgetId, views);
+        appWidgetManager.updateAppWidget(provider, views);
     }
 
     @Override

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.os.Debug;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         test = findViewById(R.id.test);
         String content = readTxtContent();
         test.setText(content);
-
+        Button button = findViewById(R.id.button_components);
     }
 
     public void down(View view){
@@ -42,17 +44,21 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button_components:
                 startActivity(new Intent(this,ComponentsActivity.class));
                 break;
+                //基本控件
             case R.id.basicView:
                 startActivity(new Intent(this,BasicViewActivity.class ));
                 break;
+                //需求
             case R.id.features_bt:
                 startActivity(new Intent(this,FeaturesActivity.class));
                 break;
+                //java练习
             case R.id.java_bt:
-                startActivity(new Intent(this,DiseqcDialogActivity.class));
-                break;
-            case R.id.satellite:
                 startActivity(new Intent(this,JavaActivity.class));
+                break;
+                //服务管理
+            case R.id.manager:
+                startActivity(new Intent(this,ServiceManagerActivity.class));
                 break;
             default:
                     break;
@@ -61,9 +67,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause: tuyong");
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.test_menu,menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 
     private String readTxtContent() {
