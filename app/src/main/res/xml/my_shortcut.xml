@@ -9,11 +9,11 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.example.myview"
-            android:targetClass="com.example.myview.MainActivity" />
+            android:targetClass="com.example.myview.activity.MainActivity" />
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.example.myview"
-            android:targetClass="com.example.myview.MainActivity" />
+            android:targetClass="com.example.myview.activity.MainActivity" />
         <categories android:name="android.shortcut.conversation"/>
     </shortcut>
 </shortcuts>

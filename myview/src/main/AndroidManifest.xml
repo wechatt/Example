@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.DrawArcActivity"></activity>
+        <activity android:name=".activity.DrawCircleActivity" />
+        <activity android:name=".activity.CustomViewActivity" />
+        <activity android:name=".activity.DispacthTouchEventActivity" />
+
         <service
             android:name=".service.TimerService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <receiver android:name=".widget.NewAppWidget">
             <intent-filter>
@@ -24,13 +29,18 @@
                 android:resource="@xml/new_app_widget_info" />
         </receiver>
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:allowTaskReparenting="true"
+            android:taskAffinity="com.android.set">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <meta-data android:name="android.app.shortcuts"
+
+            <meta-data
+                android:name="android.app.shortcuts"
                 android:resource="@xml/my_shortcut" />
         </activity>
     </application>

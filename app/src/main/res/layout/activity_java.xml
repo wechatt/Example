@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.JavaActivity">
-    <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="100dp">
 
     <Button
         android:layout_width="match_parent"
@@ -16,5 +14,18 @@
         android:text="dialog"
         android:id="@+id/collectionRepeatingElementNumber"
         ></Button>
-    </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="javaDown"
+            android:text="parseInt"
+            android:id="@+id/parseInt"
+            ></Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="javaDown"
+        android:text="java新特性"
+        android:id="@+id/new_feature"
+        ></Button>
 </LinearLayout>

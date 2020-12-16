@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:myview="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.ShortcutManagerActivity">
-<Button
-
-    android:id="@+id/add_shortcut"
-    android:onClick="down"
-    android:text="弹框提示添加桌面快捷方式"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"></Button>
+    tools:context=".activity.CustomViewActivity">
     <Button
-        android:id="@+id/add_shortcut2"
+        android:id="@+id/draw_circle_view"
         android:onClick="down"
-        android:text="动态添加桌面快捷方式"
+        android:layout_width="match_parent"
+        android:text="draw_circle_画圆"
+        android:layout_height="wrap_content"></Button>
+    <Button
+        android:id="@+id/draw_arc_view"
+        android:onClick="down"
+        android:text="draw_arc_画圆弧"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></Button>
+
+
 </LinearLayout>

@@ -18,11 +18,29 @@
                 android:layout_height="wrap_content"
                 android:text="@string/get_px"/>
             <Button
+                android:id="@+id/screen_size"
+                android:onClick="featureDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取屏幕尺寸"/>
+            <Button
                 android:id="@+id/news"
                 android:onClick="featureDown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/news_app"/>
+            <Button
+                android:id="@+id/mkdir"
+                android:onClick="featureDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="创建文件夹"/>
+            <Button
+                android:id="@+id/mkfile"
+                android:onClick="featureDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="创建文件"/>
 
         </LinearLayout>
     </ScrollView>

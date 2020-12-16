@@ -1,14 +1,15 @@
-package com.example.myview;
+package com.example.myview.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 
-public class MyLinearLayout extends LinearLayout {
+public class MyRelativeLayout extends RelativeLayout {
     private static final String TAG = "tuyong";
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
@@ -26,19 +27,19 @@ public class MyLinearLayout extends LinearLayout {
         return isConsum;
     }
 
-    public MyLinearLayout(Context context) {
+    public MyRelativeLayout(Context context) {
         super(context);
     }
 
-    public MyLinearLayout(Context context, @Nullable AttributeSet attrs) {
+    public MyRelativeLayout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyLinearLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyRelativeLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public MyLinearLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public MyRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 }

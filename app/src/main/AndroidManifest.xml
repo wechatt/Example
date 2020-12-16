@@ -14,7 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.EnableIconActivity"></activity>
+        <activity android:name=".activity.AnrTestActivity"
+            android:allowTaskReparenting="true"
+            android:taskAffinity="com.example.myview"></activity>
+        <activity android:name=".activity.SimulateEventActivity"
+            android:allowTaskReparenting="true"
+            android:taskAffinity="com.example.myview"></activity>
+        <activity android:name=".activity.EnableIconActivity" />
         <activity android:name=".activity.PackageManagerActivity" />
 
         <receiver
@@ -37,7 +43,7 @@
         <activity android:name=".activity.RepeatingElementNumberActivity" />
         <activity
             android:name=".activity.JavaActivity"
-            android:theme="@style/Theme.AppCompat.Dialog" />
+         />
         <activity android:name=".activity.TextViewScrollActivity" />
         <activity android:name=".activity.ScrollTextViewActivity" />
         <activity android:name=".activity.NotificationActivity" />
@@ -61,22 +67,27 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
-                android:resource="@xml/my_shortcut"/>
+                android:resource="@xml/my_shortcut" />
         </activity>
+
         <activity-alias
             android:name=".MainActivity"
             android:enabled="true"
-            android:targetActivity="com.thundersoft.mi.example.activity.MainActivity">
+            android:targetActivity=".activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"></action>
-                <category android:name="android.intent.category.LAUNCHER"></category>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
-                android:resource="@xml/my_shortcut"/>
+                android:resource="@xml/my_shortcut" />
         </activity-alias>
+
         <activity android:name=".activity.BasicViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

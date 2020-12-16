@@ -8,7 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
-import com.example.myview.MainActivity;
+import com.example.myview.activity.MainActivity;
 import com.example.myview.R;
 import com.example.myview.service.TimerService;
 import java.text.SimpleDateFormat;

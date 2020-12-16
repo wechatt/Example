@@ -15,8 +15,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.thundersoft.mi.example.R;
+import com.thundersoft.mi.example.utils.JavaNewFeature;
+import com.thundersoft.mi.example.utils.MyApi;
+import com.thundersoft.mi.example.utils.Utils;
 
 public class JavaActivity extends Activity {
     private static final String TAG = "JavaActivity";
@@ -39,7 +43,16 @@ public class JavaActivity extends Activity {
             case R.id.collectionRepeatingElementNumber:
                 handler.sendEmptyMessage(1);
                 Log.d(TAG, "javaDown: tuyong");
-                //showLogoutDialog();
+                showLogoutDialog();
+                break;
+            case R.id.parseInt:
+               // int parseInt = Integer.parseInt("123",8);
+                int parseInt = MyApi.myParseInt("1234");
+                Utils.sys(TAG,parseInt+"");
+                break;
+            case R.id.new_feature:
+                Toast.makeText(this,"ssss",Toast.LENGTH_SHORT).show();
+                JavaNewFeature.start();
                 break;
             default :
                 break;

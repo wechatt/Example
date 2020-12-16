@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Debug;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,9 +13,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.LongDef;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.thundersoft.mi.example.R;
+import com.thundersoft.mi.example.utils.Utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         String content = readTxtContent();
         test.setText(content);
         Button button = findViewById(R.id.button_components);
+        Utils.printTaskId(this);
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        Log.d(TAG, "onCreate: displayMetrics.densityDpi =" + displayMetrics.densityDpi);
     }
 
     public void down(View view){
@@ -59,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
                 //服务管理
             case R.id.manager:
                 startActivity(new Intent(this,ServiceManagerActivity.class));
+                break;
+                //模拟事件
+            case R.id.simulated_event:
+                startActivity(new Intent(this,SimulateEventActivity.class));
                 break;
             default:
                     break;

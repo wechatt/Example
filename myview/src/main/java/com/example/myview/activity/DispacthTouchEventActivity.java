@@ -1,4 +1,4 @@
-package com.example.myview;
+package com.example.myview.activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,16 +11,15 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.myview.view.MyFrameLayout;
+import com.example.myview.view.MyRelativeLayout;
+import com.example.myview.view.MyTextView;
+
+public class DispacthTouchEventActivity extends AppCompatActivity {
     private static final String TAG = "tuyong";
-    private ImageView imageView;
-    private Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,20 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-isInMultiWindowMode();
+        String packageName = getPackageName();
+        int taskId = getTaskId();
+        Log.d(TAG,"packageName2 =" +packageName + "; taskId ="+taskId);
     }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
-
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         Log.d(TAG, "MainActivity : dispatchTouchEvent: ev.getAction =" + ev.getAction());
         return super.dispatchTouchEvent(ev);
     }
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.d(TAG, "MainActivity : onTouchEvent: event.getAction =" + event.getAction() );
@@ -55,19 +49,21 @@ isInMultiWindowMode();
 
     private View getView() {
         MyFrameLayout frameLayout = new MyFrameLayout(this);
-        MyLinearLayout linearLayout = new MyLinearLayout(this);
+        MyRelativeLayout relativeLayout = new MyRelativeLayout(this);
         FrameLayout.LayoutParams fl = new FrameLayout.LayoutParams(800,800);
         fl.gravity = Gravity.CENTER;
-        linearLayout.setLayoutParams(fl);
+        relativeLayout.setLayoutParams(fl);
         MyTextView textView = new MyTextView(this);
-        LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(400,400);
-        ll.gravity = Gravity.CENTER;
+        RelativeLayout.LayoutParams ll = new RelativeLayout.LayoutParams(400,400);
+        //设置gravity为父控件的center
+        ll.addRule(RelativeLayout.CENTER_IN_PARENT);
         textView.setLayoutParams(ll);
-        frameLayout.addView(linearLayout);
-        linearLayout.addView(textView);
+        frameLayout.addView(relativeLayout);
+        relativeLayout.addView(textView);
         frameLayout.setBackgroundColor(Color.RED);
-        linearLayout.setBackgroundColor(Color.BLUE);
+        relativeLayout.setBackgroundColor(Color.BLUE);
         textView.setBackgroundColor(Color.GREEN);
+        textView.setTextSize(10);
         return frameLayout;
     }
 }
