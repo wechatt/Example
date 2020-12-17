@@ -4,15 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
-
-import androidx.annotation.LongDef;
-
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Utils {
     private static final String TAG = "Utils";
-    private Context mContext = MyApplication.getContext();
+    private static final Context mContext = MyApplication.getContext();
     public static void printTaskId(Activity activity){
         String packageName = activity.getPackageName();
         int taskId = activity.getTaskId();
@@ -61,5 +59,26 @@ public class Utils {
 
         return file.getAbsolutePath();
     }
+
+    /**
+     * 将内容写入sd卡中
+     * @param filename 要写入的文件名
+     * @param content  待写入的内容
+     * @throws IOException
+     */
+    public static void writeExternal(String filename, String content) throws IOException {
+        //获取外部存储卡的可用状态
+        String storageState = Environment.getExternalStorageState();
+        //判断是否存在可用的的SD Card
+        if (storageState.equals(Environment.MEDIA_MOUNTED)) {
+            //路径： /storage/emulated/0/Android/data/com.yoryky.demo/cache/yoryky.txt
+            filename = mContext.getExternalCacheDir().getAbsolutePath()  + File.separator + filename;
+            Log.d(TAG, "writeExternal: filename="+filename);
+            FileOutputStream outputStream = new FileOutputStream(filename);
+            outputStream.write(content.getBytes());
+            outputStream.close();
+        }
+    }
+
 
 }
